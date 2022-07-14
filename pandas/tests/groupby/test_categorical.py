@@ -1336,11 +1336,11 @@ def test_groupby_cat_preserves_structure(observed, ordered):
 
     result = (
         df.groupby("Name", observed=observed)
-        .agg(DataFrame.sum, skipna=True)
+        .agg('sum')
         .reset_index()
     )
 
-    tm.assert_frame_equal(result, expected)
+    tm.assert_frame_equal(result, expected, check_dtype=False)
 
 
 def test_get_nonexistent_category():

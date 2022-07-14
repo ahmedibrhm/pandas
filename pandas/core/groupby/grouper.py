@@ -917,6 +917,7 @@ def get_grouper(
         groupings.append(Grouping(Index([], dtype="int"), np.array([], dtype=np.intp)))
 
     # create the internals grouper
+    print(groupings)
     grouper = ops.BaseGrouper(
         group_axis, groupings, sort=sort, mutated=mutated, dropna=dropna
     )
